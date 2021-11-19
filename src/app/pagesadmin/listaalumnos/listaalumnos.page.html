@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Lista de Alumnos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="fondo">
+  <Center>
+  <p class="listaA">Listado de Alumnos:</p>
+  </Center>
+  <ion-card>
+    <ion-list>
+      <ion-item-sliding *ngFor="let item of usuario">
+          <ion-label>
+            <ion-title>{{ item.nombre }} {{item.apellido}}</ion-title>
+            <!-- word-wrap para los cortes entre palabras  white-space para que aparezca todo el texto en varias lineas y no se corte-->
+            <p>{{ item.rut }}</p>
+          </ion-label>
+        <ion-item-options side="end">
+          <ion-item-option (click)="modificar(item)">
+            <ion-icon name="create"></ion-icon> Modificar
+          </ion-item-option>
+          <ion-item-option color="danger" (click)="eliminar(item)">
+            <ion-icon name="trash"></ion-icon> Eliminar
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </ion-card>
+
+</ion-content>

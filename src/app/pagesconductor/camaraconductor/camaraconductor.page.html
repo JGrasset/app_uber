@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>camaraconductor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="container">
+    <ion-button (click)="takePicture()">Take picture</ion-button>
+    <img *ngIf="image" [src]="image" alt="image" style="width: 100%;max-width: 250px;">
+  </div>
+
+</ion-content>

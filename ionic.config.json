@@ -1,0 +1,10 @@
+{
+  "name": "app_uber",
+  "integrations": {
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
+  },
+  "type": "angular"
+}

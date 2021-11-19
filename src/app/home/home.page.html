@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <link rel="stylesheet" href="home.page.scss">
+  <ion-toolbar>
+    <ion-title>
+      Home
+    </ion-title>
+    <ion-buttons slot="start">
+    <ion-menu-button autoHide="false"></ion-menu-button>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="fondo" [fullscreen]="true">
+  <ion-card>
+  <ion-item *ngFor="let item of conductor; let i = index">
+    <ion-avatar slot="start">
+      <img src="../../assets/icon/{{item.imagen}}">
+    </ion-avatar>
+    <ion-label>{{item.nombre}} {{item.apellido}}</ion-label>
+    <br><br>
+    <ion-label>Hacia: {{item.destino}}</ion-label>
+    <ion-button class="btn2" expand="small" color="medium" [routerLink]="['auto' + (i + 1)]">Pedir Auto</ion-button>
+  </ion-item>
+</ion-card>
+</ion-content>

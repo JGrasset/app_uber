@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <link rel="stylesheet" href="homeadmin.page.scss">
+  <ion-toolbar>
+    <ion-title>
+      Home Admin
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="fondo" [fullscreen]="true">
+  <ion-card>
+  <ion-item *ngFor="let item of conductor; let i = index">
+    <ion-avatar slot="start">
+      <img src="../../assets/icon/{{item.imagen}}">
+    </ion-avatar>
+    <ion-label>{{item.nombre}} {{item.apellido}}</ion-label>
+    <br><br>
+    <ion-label>Hacia: {{item.destino}}</ion-label>
+  </ion-item>
+</ion-card>
+<br><br><br><br>
+<center><ion-button class="btn1" expand="block" color="medium" [routerLink]="['/listaalumnos']">Lista de Alumnos</ion-button></center>
+<center><ion-button class="btn2" expand="block" color="medium" [routerLink]="['/listaconductores']">Lista de Conductores</ion-button></center>
+</ion-content>
