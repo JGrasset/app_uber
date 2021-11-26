@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 import { ServiciobdService } from 'src/app/services/serviciobd.service';
 
 @Component({
@@ -12,7 +13,9 @@ export class EliminarPage implements OnInit {
     contrasena: null
   }
 
-  constructor(private serviciobd: ServiciobdService) { }
+  constructor(private serviciobd: ServiciobdService, private menu: MenuController) {
+    this.menu.enable(true);
+  }
 
   ngOnInit() {
     this.serviciobd.servicebdState().subscribe((res) =>{

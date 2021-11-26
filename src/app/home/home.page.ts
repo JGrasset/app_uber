@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 import { ServiciobdService } from '../services/serviciobd.service';
 
 @Component({
@@ -10,7 +11,9 @@ export class HomePage {
   
   conductor: any [] =[]
 
-  constructor(private serviciobd: ServiciobdService) {}
+  constructor(private serviciobd: ServiciobdService, private menu: MenuController){
+    this.menu.enable(true);
+   }
 
   ngOnInit() {
     
@@ -22,4 +25,7 @@ export class HomePage {
       }
     });
   }
+
+
+
 }

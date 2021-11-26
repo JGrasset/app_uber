@@ -1,0 +1,29 @@
+<ion-header>
+  <link rel="stylesheet" href="alterarusuario.page.scss">
+  <ion-toolbar>
+    <ion-title>Alterar Alumnos</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="fondo">
+  <br>
+  <br>
+  <br> 
+  <h1 class="ion-text-center">Alterar Alumno</h1>
+  <br>
+  <ion-card id="card">
+    <ion-item>
+    <ion-label position="stacked">llave 1:</ion-label>
+      <ion-input  type="text" [(ngModel)]="alumno.llave" length=10 id="llave"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">llave 2:</ion-label>
+        <ion-input  type="text" [(ngModel)]="alumno.contrasena" minlength=3 maxlenght=20 id="contrasena" clearInput></ion-input>
+      </ion-item>
+  </ion-card>
+  <ion-button expand="block" (click)="alterusuario()"color="dark" id="btn">Modificar a Administrador</ion-button>
+  <ion-button expand="block" (click)="createadmin()"color="dark" id="btn">Crear Administrador Sin Eliminar el usuario del Alumno</ion-button>
+</ion-content>

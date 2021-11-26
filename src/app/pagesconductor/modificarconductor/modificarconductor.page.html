@@ -1,9 +1,31 @@
 <ion-header>
+  <link rel="stylesheet" href="modificarconductor.page.scss">
   <ion-toolbar>
     <ion-title>modificarconductor</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content class="fondo">
+  <br>
+  <center><h5>Ingrese su contraseña para Registrar un nuevo viaje</h5></center>
+  <ion-card id="card">
+    <ion-item>
+      <label position="stacked"> Contraseña:</label>
+      <ion-input type="text" [(ngModel)]="conductor.contrasena" length=10 id="contrasena" clearInput></ion-input>
+    </ion-item>
+  </ion-card>
+  <ion-card id="card">
+    <ion-item>
+      <label position="stacked"> Destino:</label>
+      <ion-input type="password" [(ngModel)]="conductor.destino" id="destino" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <label position="stacked"> Valor:</label>
+      <ion-input type="password" [(ngModel)]="conductor.valor" id="valor" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <label position="stacked"> imagen:</label>
+      <ion-input type="password" [(ngModel)]="conductor.imagen" id="imagen" clearInput></ion-input>
+    </ion-item>
+    </ion-card>
 </ion-content>

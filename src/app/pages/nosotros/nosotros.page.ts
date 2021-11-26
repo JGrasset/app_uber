@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-nosotros',
@@ -7,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NosotrosPage implements OnInit {
 
-  constructor() { }
-
+  constructor(private menu: MenuController) {
+    this.menu.enable(true);
+   }
   ngOnInit() {
   }
 

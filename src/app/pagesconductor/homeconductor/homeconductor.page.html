@@ -1,0 +1,28 @@
+<ion-header>
+  <link rel="stylesheet" href="homeconductor.page.scss">
+  <ion-toolbar>
+    <ion-title>Home Conductor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="fondo">
+  <br>
+  <ion-list>
+    <ion-item>
+    <ion-label position="stacked" class="label">Registrar un nuevo viaje</ion-label>
+    <br>
+    <ion-button expand="block" color="medium" [routerLink]="['/modificarconductor']">Crear un Viaje</ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked" class="label">Modificar Usuario:</ion-label>
+      <br>
+      <ion-button expand="block" color="medium" [routerLink]="['/perfilconductor']">Modificar Información</ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked" class="label">Guia del Conductor</ion-label>
+      <br>
+      <ion-button expand="block" color="medium" [routerLink]="['/nuestrocon']">Nuestra Guia</ion-button>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="block" color="medium" (click)="scanCode()">Scanear Codigo QR</ion-button>
+</ion-content>

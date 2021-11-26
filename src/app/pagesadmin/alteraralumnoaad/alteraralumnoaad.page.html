@@ -1,0 +1,49 @@
+<ion-header>
+  <link rel="stylesheet" href="alteraralumnoaad.page.scss">
+  <ion-toolbar>
+    <ion-title>alterar Usuario a Conductor</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="fondo">
+  <br>
+  <br>
+  <br> 
+  <h1 class="ion-text-center">Registro de Nuevo Conductor</h1>
+  <br>
+  <ion-card id="card">
+    <ion-item>
+    <ion-label position="stacked">Rut:</ion-label>
+      <ion-input  type="text" [(ngModel)]="conductor.rut" length=10 id="tPkey" clearInput placeholder="Sin puntos y con guión"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Nombre:</ion-label>
+        <ion-input  type="text" [(ngModel)]="conductor.nombre" minlength=3 maxlenght=20 id="User" clearInput></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Apellido:</ion-label>
+        <ion-input  type="text" [(ngModel)]="conductor.apellido" minlength=3 maxlenght=20 id="User2" clearInput ></ion-input>
+      </ion-item>
+      <ion-item>
+      <ion-label  position="stacked">destino:</ion-label>
+      <ion-input type="text" [(ngModel)]="conductor.destino" minlength=3 maxlenght=20 id="Pass" clearInput></ion-input>
+    </ion-item>
+      <ion-item>
+      <ion-label position="stacked">valor:</ion-label>
+      <ion-input  type="text" [(ngModel)]="conductor.valor" minlength=3 maxlenght=20 id="User" clearInput></ion-input>
+    </ion-item>
+  <ion-item>
+  <ion-label position="stacked">imagen del vehiculo:</ion-label>
+  <ion-button expand="full" (click)="takePicture()">
+    Ir a la Galería
+    </ion-button>
+</ion-item>
+    <br>
+  </ion-card>
+  <ion-button expand="block" (click)="alterarconductor()" color="dark">Alterar a conductor</ion-button>
+  <ion-button expand="block" (click)="insertconductor()" color="dark">Registrar al conductor sin eliminar datos</ion-button>
+</ion-content>
+

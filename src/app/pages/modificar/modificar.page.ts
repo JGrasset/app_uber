@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 import { Alumno } from 'src/app/services/alumno';
 import { ServiciobdService } from 'src/app/services/serviciobd.service';
 
@@ -15,7 +16,9 @@ export class ModificarPage implements OnInit {
     contrasena: '',
     correo:'',
   };
-  constructor(private serviciobd: ServiciobdService) { }
+  constructor(private serviciobd: ServiciobdService, private menu: MenuController) {
+    this.menu.enable(true);
+  }
 
   ngOnInit() {
   }

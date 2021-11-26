@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
 import { ServiciobdService } from 'src/app/services/serviciobd.service';
 
 @Component({
@@ -9,10 +10,9 @@ import { ServiciobdService } from 'src/app/services/serviciobd.service';
 export class ListaconductoresPage implements OnInit {
   conductor: any [] =[]
 
-  constructor(private serviciobd: ServiciobdService) {}
+  constructor(private serviciobd: ServiciobdService, private router: Router){}
 
-  ngOnInit() {
-    
+  ngOnInit() { 
     this.serviciobd.dbState().subscribe((res) =>{
       if(res){
         this.serviciobd.fetchconductor().subscribe(conductores =>{
@@ -21,4 +21,15 @@ export class ListaconductoresPage implements OnInit {
       }
     });
   }
+  modificar(item){
+    let navigationExtras: NavigationExtras = {
+      state: {
+        rut: item.rut,
+      }
+    }
+    this.router.navigate(['/alterarconductor'], navigationExtras);
+  }
+  eliminar(item){
+    this.serviciobd.deleteconductor(item.rut);
+  } 
 }

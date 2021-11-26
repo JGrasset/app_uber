@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 import { ServiciobdService } from 'src/app/services/serviciobd.service';
 
 @Component({
@@ -14,7 +15,9 @@ export class LoginPage implements OnInit {
     }
   ]
 
-  constructor(private seriviciobd:ServiciobdService) { }
+  constructor(private seriviciobd:ServiciobdService, private menu: MenuController) {
+    this.menu.enable(true);
+   }
 
   ngOnInit() {
     this.seriviciobd.servicebdState().subscribe((res) =>{
@@ -28,5 +31,6 @@ export class LoginPage implements OnInit {
 login(){
   this.seriviciobd.loginalumno(this.user.rut, this.user.pass);
   this.seriviciobd.loginadmin(this.user.rut, this.user.pass);
+  this.seriviciobd.loginconductor(this.user.rut, this.user.pass);
 }
 }

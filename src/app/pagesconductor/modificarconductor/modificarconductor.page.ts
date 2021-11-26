@@ -6,10 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./modificarconductor.page.scss'],
 })
 export class ModificarconductorPage implements OnInit {
-
+  conductor: any = [
+    {
+      pass:null,
+      destino:null,
+      valor:null,
+      imagen:null
+    }
+  ]
   constructor() { }
 
   ngOnInit() {
   }
+  
 
 }

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras } from '@angular/router';
-import { Alumno } from 'src/app/services/alumno';
 import { ServiciobdService } from 'src/app/services/serviciobd.service';
 
 @Component({
@@ -25,10 +24,20 @@ export class ListaalumnosPage implements OnInit {
     });
   }
   eliminar(item){
-    this.serviciobd.deletealumno(item.rut);
+    this.serviciobd.deletealumnoad(item.rut);
     this.serviciobd.presentAlert("Alumno Eliminado");
   }
+
   modificar(item){
+    let navigationExtras: NavigationExtras = {
+      state: {
+        rut: item.rut
+      }
+    }
+    this.serviciobd.router.navigate(['/alteraralumnoaad'], navigationExtras);
+  }
+
+  modificar2(item){
     let navigationExtras: NavigationExtras = {
       state: {
         rut: item.rut,
@@ -38,7 +47,7 @@ export class ListaalumnosPage implements OnInit {
         correo: item.correo
       }
     }
-    this.serviciobd.router.navigate(['/modificarproducto'], navigationExtras);
+    this.serviciobd.router.navigate(['/alterarusuario'], navigationExtras);
   }
 
 

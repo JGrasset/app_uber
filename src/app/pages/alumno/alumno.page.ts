@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 import { Alumno } from 'src/app/services/alumno';
 import { ServiciobdService } from 'src/app/services/serviciobd.service';
 
@@ -16,9 +17,10 @@ export class AlumnoPage implements OnInit {
     correo:'',
   };
 
-  constructor(public serviciobd: ServiciobdService) {
-    
+  constructor(public serviciobd: ServiciobdService, private menu: MenuController) {
+    this.menu.enable(true);
   }
+
 
   ngOnInit() {
     this.serviciobd.fetchalumno().subscribe((alumno) => {

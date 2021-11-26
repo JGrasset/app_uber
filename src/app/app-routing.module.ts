@@ -59,6 +59,26 @@ const routes: Routes = [
     path: 'camaraconductor',
     loadChildren: () => import('./pagesconductor/camaraconductor/camaraconductor.module').then( m => m.CamaraconductorPageModule)
   },
+  {
+    path: 'alterarusuario',
+    loadChildren: () => import('./pagesadmin/alterarusuario/alterarusuario.module').then( m => m.AlterarusuarioPageModule)
+  },
+  {
+    path: 'alterarconductor',
+    loadChildren: () => import('./pagesadmin/alterarconductor/alterarconductor.module').then( m => m.AlterarconductorPageModule)
+  },
+  {
+    path: 'alteraralumnoaad',
+    loadChildren: () => import('./pagesadmin/alteraralumnoaad/alteraralumnoaad.module').then( m => m.AlteraralumnoaadPageModule)
+  },
+  {
+    path: 'homeconductor',
+    loadChildren: () => import('./pagesconductor/homeconductor/homeconductor.module').then( m => m.HomeconductorPageModule)
+  },
+  {
+    path: 'nuestrocon',
+    loadChildren: () => import('./pagesconductor/nuestrocon/nuestrocon.module').then( m => m.NuestroconPageModule)
+  },
 ];
 
 @NgModule({
